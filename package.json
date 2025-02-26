@@ -1,0 +1,6 @@
+{
+  "name": "base-seven",
+  "version": "1.0.0",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.0"
+}
