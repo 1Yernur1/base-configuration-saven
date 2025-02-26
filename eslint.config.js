@@ -41,6 +41,7 @@ export default tseslint.config(
       ...reactPlugin.configs.flat.recommended.rules,
       ...reactPlugin.configs.flat["jsx-runtime"].rules,
       ...reactHooksPlugin.configs.recommended.rules,
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     },
   },
   {
