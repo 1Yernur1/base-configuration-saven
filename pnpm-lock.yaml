@@ -27,6 +27,9 @@ importers:
       eslint:
         specifier: ^9.21.0
         version: 9.21.0
+      eslint-config-prettier:
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@9.21.0)
       globals:
         specifier: ^16.0.0
         version: 16.0.0
@@ -539,6 +542,12 @@ packages:
   escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+
+  eslint-config-prettier@10.0.1:
+    resolution: {integrity: sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
 
   eslint-scope@8.2.0:
     resolution: {integrity: sha512-PHlWUfG6lvPc3yvP5A4PNyBL1W8fkDUccmI21JUu/+GKZBoH/W5u6usENXUrWFRsyoW5ACUjFGgAFQp5gUlb/A==}
@@ -1449,6 +1458,10 @@ snapshots:
       '@esbuild/win32-x64': 0.25.0
 
   escape-string-regexp@4.0.0: {}
+
+  eslint-config-prettier@10.0.1(eslint@9.21.0):
+    dependencies:
+      eslint: 9.21.0
 
   eslint-scope@8.2.0:
     dependencies:
