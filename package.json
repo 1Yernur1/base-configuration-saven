@@ -2,5 +2,14 @@
   "name": "base-seven",
   "version": "1.0.0",
   "license": "ISC",
-  "packageManager": "pnpm@10.5.0"
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "packageManager": "pnpm@10.5.0",
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
 }
