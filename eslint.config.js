@@ -12,7 +12,7 @@ export default tseslint.config(
       tseslint.configs.strict,
       tseslint.configs.stylistic,
     ],
-    files: ["**/*.{js,ts}"],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       globals: {
         ...globals.browser,
