@@ -1,9 +1,11 @@
-import js from "@eslint/js"
+import eslint from "@eslint/js"
 import globals from "globals"
+import tseslint from "typescript-eslint"
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
-  js.configs.recommended,
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.strict,
+  tseslint.configs.stylistic,
   {
     languageOptions: {
       globals: {
@@ -11,5 +13,5 @@ export default [
         ...globals.serviceworker,
       },
     },
-  },
-]
+  }
+)
