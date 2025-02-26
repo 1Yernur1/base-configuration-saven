@@ -1,6 +1,6 @@
 import { Button } from "@/shared/components/ui/button";
 
-import { ThemeProvider } from "./providers/theme/ui/ThemeProvider";
+import { ThemeProvider } from "./providers";
 
 export const App = () => {
   return (
