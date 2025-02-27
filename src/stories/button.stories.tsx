@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { expect, fn, userEvent, within } from "@storybook/test";
 
 import { Button } from "@/shared/components/ui/button";
 
@@ -36,9 +36,17 @@ export const Default: Story = {
   args: {
     variant: "default",
     size: "default",
-    children: "Default Save",
+    children: "Default",
     disabled: false,
     onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /default/i });
+
+    await userEvent.click(button);
+
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
 
@@ -46,9 +54,17 @@ export const Destructive: Story = {
   args: {
     variant: "destructive",
     size: "default",
-    children: "Destructive Save",
+    children: "Destructive",
     disabled: false,
     onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /destructive/i });
+
+    await userEvent.click(button);
+
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
 
@@ -56,9 +72,17 @@ export const Outline: Story = {
   args: {
     variant: "outline",
     size: "default",
-    children: "Outline Save",
+    children: "Outline",
     disabled: false,
     onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /outline/i });
+
+    await userEvent.click(button);
+
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
 
@@ -66,9 +90,17 @@ export const Secondary: Story = {
   args: {
     variant: "secondary",
     size: "default",
-    children: "Secondary Save",
+    children: "Secondary",
     disabled: false,
     onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /secondary/i });
+
+    await userEvent.click(button);
+
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
 
@@ -76,9 +108,17 @@ export const Ghost: Story = {
   args: {
     variant: "ghost",
     size: "default",
-    children: "Ghost Save",
+    children: "Ghost",
     disabled: false,
     onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /ghost/i });
+
+    await userEvent.click(button);
+
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
 
@@ -86,8 +126,16 @@ export const Link: Story = {
   args: {
     variant: "link",
     size: "default",
-    children: "Link Save",
+    children: "Link",
     disabled: false,
     onClick: fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /link/i });
+
+    await userEvent.click(button);
+
+    expect(args.onClick).toHaveBeenCalled();
   },
 };
