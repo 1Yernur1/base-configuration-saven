@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { ThemeProviderProps } from "../model/types/ThemeProviderProps";
 import { ThemeType } from "../model/types/ThemeType";
@@ -28,14 +28,20 @@ export const ThemeProvider = ({
     root.classList.add(appliedTheme);
   }, [theme]);
 
-  const setThemeWithStorage = (newTheme: ThemeType) => {
-    localStorage.setItem(storageKey, newTheme);
-    setTheme(newTheme);
-  };
+  const setThemeWithStorage = useCallback(
+    (newTheme: ThemeType) => {
+      localStorage.setItem(storageKey, newTheme);
+      setTheme(newTheme);
+    },
+    [storageKey]
+  );
+
+  const value = useMemo(
+    () => ({ theme, setTheme: setThemeWithStorage }),
+    [theme, setThemeWithStorage]
+  );
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: setThemeWithStorage }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
