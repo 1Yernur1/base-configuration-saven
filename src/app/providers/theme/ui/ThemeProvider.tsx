@@ -18,14 +18,18 @@ export const ThemeProvider = ({
     const root = document.documentElement;
     root.classList.remove("light", "dark");
 
-    const appliedTheme =
-      theme === "system"
-        ? window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light"
-        : theme;
+    let appliedTheme: "light" | "dark";
+    if (theme === "system") {
+      appliedTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    } else {
+      appliedTheme = theme === "dark" ? "dark" : "light";
+    }
 
-    root.classList.add(appliedTheme);
+    if (appliedTheme) {
+      root.classList.add(appliedTheme);
+    }
   }, [theme]);
 
   const setThemeWithStorage = useCallback(
