@@ -4,7 +4,7 @@ import { fn } from "@storybook/test";
 import { Button } from "@/shared/components/ui/button";
 
 const meta: Meta<typeof Button> = {
-  title: "Button",
+  title: "Design System/Atoms/Button",
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
@@ -36,7 +36,7 @@ export const Default: Story = {
   args: {
     variant: "default",
     size: "default",
-    children: "Default button",
+    children: "Default Save",
     disabled: false,
     onClick: fn(),
   },
@@ -46,7 +46,7 @@ export const Destructive: Story = {
   args: {
     variant: "destructive",
     size: "default",
-    children: "Destructive button",
+    children: "Destructive Save",
     disabled: false,
     onClick: fn(),
   },
@@ -56,7 +56,7 @@ export const Outline: Story = {
   args: {
     variant: "outline",
     size: "default",
-    children: "Outline button",
+    children: "Outline Save",
     disabled: false,
     onClick: fn(),
   },
@@ -66,7 +66,7 @@ export const Secondary: Story = {
   args: {
     variant: "secondary",
     size: "default",
-    children: "Secondary button",
+    children: "Secondary Save",
     disabled: false,
     onClick: fn(),
   },
@@ -76,7 +76,7 @@ export const Ghost: Story = {
   args: {
     variant: "ghost",
     size: "default",
-    children: "Ghost button",
+    children: "Ghost Save",
     disabled: false,
     onClick: fn(),
   },
@@ -86,7 +86,7 @@ export const Link: Story = {
   args: {
     variant: "link",
     size: "default",
-    children: "Link button",
+    children: "Link Save",
     disabled: false,
     onClick: fn(),
   },
